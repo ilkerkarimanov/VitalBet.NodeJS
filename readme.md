@@ -39,7 +39,7 @@ export class MongoConnection implements IMongoConnection{
 ### Solution ###
 Solution | Author(s)
 ---------|----------
-vitalbet | Ilker Karimanov
+VitalBet.NodeJS | Ilker Karimanov
 
 ### Version history ###
 Version  | Date | Comments
