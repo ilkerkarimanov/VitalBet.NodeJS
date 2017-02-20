@@ -1,4 +1,4 @@
-# Live streaming sports feed with NodeJS(Express), SocketIO & MongoDB #
+# Live streaming sports feed with NodeJS(Express), Socket.IO & MongoDB #
 
 ## How fast can be NodeJS and MongoDB? ##
 
