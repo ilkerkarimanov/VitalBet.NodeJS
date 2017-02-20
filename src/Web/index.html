@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="lnmunhoz">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+  <title>Sport Feed</title>
+</head>
+
+<body>
+
+<h2>Matches for the next 24 hours:</h2>
+<div id="container">
+
+    <ul id="matches" data-bind="foreach: matches">
+        <li>
+            <span data-bind="text: name"></span>
+            <span data-bind="text: startDate"></span>
+        </li>
+    </ul>
+</div>
+
+  <script type="text/javascript">
+    function ViewModel(data) {
+      var self = this;
+      self.socketServer = 'localhost:3000';
+      var socket = io.connect(self.socketServer);
+      self.matches = ko.observableArray([]);
+
+      socket.on('matches', function (matches) {
+        console.log('Match feed received....');
+        var result = [];
+        $.each(matches, function (index, value) {
+          var localizedDate = moment.utc(value.StartDate).toDate();
+          localizedDate = moment(localizedDate).format('YYYY-MM-DD HH:mm:ss');
+          result.push({ name: value.Name, startDate: localizedDate })
+        })
+        self.matches(result);
+      });
+
+    }
+    var vm = new ViewModel();
+    ko.applyBindings(vm);
+  </script>
+</body>
+
+</html>
