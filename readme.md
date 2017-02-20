@@ -30,6 +30,11 @@ export class MongoConnection implements IMongoConnection{
     public DbName: string = 'vitalbet-Db';
 }
 ```
+### Run commands ###
+1. npm install
+2. gulp scripts
+3. npm start
+4. Open http://localhost:3000
 
 ### Solution ###
 Solution | Author(s)
