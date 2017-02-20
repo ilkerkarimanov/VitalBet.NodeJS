@@ -1,10 +1,10 @@
-# Live streaming sports feed with NodeJS(Express), Socket.IO & MongoDB #
+# Live streaming sports feed with NodeJS (Express), Socket.IO & MongoDB #
 
 ## How fast can be NodeJS and MongoDB? ##
 
 That's answer I was looking for when decided to implement this solution with NodeJS and some open source technologies.
 
-[Original concept is from another interview project I've done on top of .Net Framework - Web Api 2, SignalR and EF 6;](https://github.com/ilkerkarimanov/UP.VitalBet)
+[Original concept is from another project I've done on top of .Net Framework - Web Api 2, SignalR and EF 6](https://github.com/ilkerkarimanov/UP.VitalBet)
 
 ### Summary ###
 Solution shows how to implement high performance live streaming of sports events feed:
