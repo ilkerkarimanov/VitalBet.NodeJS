@@ -12,7 +12,7 @@ Solution shows how to implement high performance live streaming of sports events
 1. VitalBet endpoint exposes enormous cluster of data for different sports -> events -> matches -> bets -> odds (80k average).
 2. By consuming VitalBet feed all data is transformed in proper data models & persisted in document-oriented db - MongoDB.
 3. Express framework is used to fire up NodeJS server and lightweight http services.
-4. Socket.IO is used as equivalent of SignarR for establishing duplex channel for client-server communication.
+4. Socket.IO is used as equivalent of SignalR for establishing duplex channel for client-server communication.
 5. MongoDb is used as persistance engine.
 
 ### Architecture ###
